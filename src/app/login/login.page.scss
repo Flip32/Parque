@@ -1,0 +1,41 @@
+ion-card{
+  height: content-box;
+  background: rgba(0, 0, 0, .1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: #cccc33 solid 1px;
+}
+
+ion-button{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #063;
+}
+
+ion-button#logar{
+  justify-self: center;
+  margin-left: 28%;
+}
+
+h4{
+  color: #cccc33;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: large;
+
+}
+
+ion-list{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: rgba(0, 0, 0, .1);
+}
+
+.login {
+  margin: 0 auto;
+  text-align: center;
+}
+
+

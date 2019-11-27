@@ -1,0 +1,105 @@
+
+div.validacao{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+div.botaoValidar{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  color: #006633 ;
+}
+
+div.botaoValidar ion-button{
+  color: #006633;
+}
+
+div.divClick{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+ion-slide {
+  padding-bottom: 15px;
+}
+
+ion-button{
+  width: 100px;
+  margin: 5px;
+  justify-self: center;
+}
+
+ion-icon {
+  font-size: medium;
+  color: #006633 ;
+  justify-self: center;
+  margin-left: 20px;
+}
+
+ion-card.atracoes{
+  background: rgba(0, 0, 0, .1);
+  color: #cccc33;
+  font-weight: bold;
+  //font-variant: small-caps;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: #cccc33 solid 1px;
+}
+
+ion-card h1 {
+  font-weight: bolder;
+  font-variant: small-caps;
+  font-size: medium;
+}
+div#SubTitle{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+ion-card-title{
+  font-size: medium;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #693;
+}
+
+ion-card-subtitle{
+  font-weight: normal;
+  font-size: small;
+  text-decoration: underline;
+  color: #693;
+}
+
+h6 {
+  padding: 0;
+  margin: 1px;
+  color: #396;
+}
+span {
+  font-weight: bold;
+}
+ion-card-content {
+  font-size: small;
+  color: #396;
+}
+ion-card img {
+  padding: 4px;
+}
+
+ion-card h1{
+  color: #cccc33;
+}
+
+.botoes {
+  margin: 0 auto;
+  text-align: center;
+}
+

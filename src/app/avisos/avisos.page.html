@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar style="--background: black; color: #396">
+    <ion-title>Avisos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen style="--background: rgb(51, 51, 51);">
+
+
+  <div id="aviso1" class="avisos animated fadeInDown " *ngFor="let aviso of (avisos | async)">
+    <ion-card class="cardAviso" >
+      <h1>{{ aviso.titulo }}</h1>
+      <ion-card-content>
+        <p>{{ aviso.conteudo }}</p>
+        <p>Data do aviso: {{ aviso.data |  date: 'dd/MM/yy'}}</p>
+      </ion-card-content>
+      <div *ngIf="exibirParaAdim()">
+        <ion-buttons >
+          <ion-button (click)="deleteAviso(aviso.id)" color="danger">
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </div>
+    </ion-card>
+  </div>
+
+
+
+
+
+</ion-content>

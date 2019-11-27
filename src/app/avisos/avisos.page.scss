@@ -1,0 +1,49 @@
+div.avisos{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+
+ion-card.cardAviso{
+  background: rgba(255, 255, 255, .7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: #cccc33 solid 1px;
+  box-shadow: 2px 2px #2f2f2f;
+}
+h1{
+  font-weight: bold;
+  color: #669933;
+  font-variant: small-caps;
+  font-size: X-large;
+}
+
+ion-card-content {
+  font-size: small;
+  color: #006633;
+  align-items: start;
+}
+
+#aviso1{
+  animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
+  -webkit-animation-delay: 0.1s;
+}
+#aviso2{
+  animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+}
+#aviso3{
+  animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
+}
+#aviso4{
+  animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  -webkit-animation-delay: 0.7s;
+}

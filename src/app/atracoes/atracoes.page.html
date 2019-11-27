@@ -1,0 +1,189 @@
+<ion-header>
+  <ion-toolbar style="--background: black; color: #396">
+    <ion-title>Atrativos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen style="--background: rgb(51, 51, 51);">
+
+<!--CARD EVENTOS-->
+  <div class="atracoes animated bounceInDown " >
+    <ion-card class="atracoes" >
+      <div class="divClick" (click)="mostraEventosF()"> <h1>Eventos</h1> </div>
+      <div *ngIf="mostraEventos" style="width: 100%">
+        <ion-slides pager="true" style="width: 100%; padding-bottom: 5px">
+
+          <ion-slide style="width: 100%" *ngFor="let evento of (eventos | async)">
+            <ion-card class="cadaAtracao">
+              <img [src]="evento.url">
+              <ion-card-subtitle>
+                {{evento.titulo}}
+              </ion-card-subtitle>
+
+              <div class="infoatracoes">
+                <p>
+                  {{evento.descricao}}
+                </p>
+              </div>
+              <div class="dataEvento">
+                <p>Data Início: {{ evento.dataI | date: 'dd/MM/yy' }}</p>
+                <p>Data Fim: {{ evento.dataF | date: 'dd/MM/yy' }}</p>
+              </div>
+              <div>
+                <ion-buttons *ngIf="exibirParaAdim()" >
+                  <ion-button (click)="deletaEvento(evento.id)" color="danger">
+                    <ion-icon name="trash"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+              </div>
+            </ion-card>
+          </ion-slide>
+
+        </ion-slides>
+      </div>
+    </ion-card>
+  </div>
+
+<!--  CARD PISCINAS-->
+
+  <div class="atracoes animated bounceInDown " >
+    <ion-card class="atracoes" >
+      <div class="divClick" (click)="mostraPiscinasF()"> <h1>Piscinas</h1> </div>
+      <div *ngIf="mostraPiscinas" style="width: 100%">
+        <ion-slides pager="true" style="width: 100%; padding-bottom: 5px">
+
+          <ion-slide style="width: 100%" *ngFor="let piscina of (piscinas | async)">
+            <ion-card class="cadaAtracao">
+              <img src="{{piscina.img}}">
+              <ion-card-subtitle padding-top="5px">
+                <h5><span>{{piscina.nome}}</span></h5>
+                <h6><span>{{piscina.funcionamento}}</span></h6>
+                <h6><span>Horário:</span> {{piscina.horario}} </h6>
+                <h6><span>{{piscina.permanencia}}</span></h6>
+              </ion-card-subtitle>
+
+              <div class="infoatracoes">
+                <p>
+                  {{ piscina.conteudo }}
+                </p>
+              </div>
+            </ion-card>
+          </ion-slide>
+
+        </ion-slides>
+      </div>
+    </ion-card>
+  </div>
+
+<!--
+  CARD ILHA MEDITAÇÃO
+  <div class="atracoes animated bounceInDown ">
+    <ion-card class="atracoes" >
+      <div class="divClick" (click)="mostraIlhaF()"><h1 >Ilha da Meditação</h1></div>
+      <div *ngIf="mostraIlha" style="width: 100%">
+        <ion-slides pager="false" style="width: 100%; padding-bottom: 5px">
+          <ion-slide>
+            <ion-card class="cadaAtracao">
+              <img src="https://firebasestorage.googleapis.com/v0/b/parquenacional-63888.appspot.com/o/Est%C3%A1ticas%2FIlhaDaMeditacao.jpg?alt=media&token=8639a24e-9a07-44fe-9ecb-d529480288bf">
+              <ion-card-subtitle padding-top="5px">
+                Ilha da Meditação
+              </ion-card-subtitle>
+
+              <div class="infoatracoes">
+                <p>
+                  A Ilha da Meditação é um espaço para contemplação da natureza situado às margens de uma pequena lagoa conhecida como Lagoa do Henrique, a qual possui importante papel na conservação da biodiversidade do Parque Nacional de Brasília, especialmente para a fauna .
+                  Recomendações: Não é permitido banho na Lagoa.
+                </p>
+              </div>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+
+      </div>
+    </ion-card>
+  </div>
+
+&lt;!&ndash;  CARD CENTRO DE VISITANTES&ndash;&gt;
+  <div class="atracoes animated bounceInDown ">
+    <ion-card class="atracoes" >
+      <div class="divClick" (click)="mostraCentroF()"><h1>Centro de Visitantes</h1></div>
+      <div *ngIf="mostraCentro" style="width: 100%">
+        <ion-slides pager="false" style="width: 100%; padding-bottom: 5px">
+          <ion-slide>
+            <ion-card class="cadaAtracao">
+              <img src="https://firebasestorage.googleapis.com/v0/b/parquenacional-63888.appspot.com/o/Est%C3%A1ticas%2FCentroEducacional.jpg?alt=media&token=50cb4ae5-fac1-49de-843a-a469fc23f30a">
+              <ion-card-subtitle padding-top="5px">
+                Centro de Visitantes
+              </ion-card-subtitle>
+              <div class="infoatracoes">
+                <p>
+                  O visitante que desejar saber um pouco mais sobre o Parque Nacional de Brasília deve se dirigir ao Centro de Visitantes, onde encontrará exposição de fotografias, maquetes do parque e outros trabalhos desenvolvidos no âmbito do programa de Educação Ambiental da Unidade de Conservação.
+                  Os interessados em se voluntariar para apoio às atividades desenvolvidas pelo Centro deverão agendar um horário pelos contatos 33613205 ou nea.pnb@icmbio.gov.br.*
+                </p>
+              </div>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+
+      </div>
+    </ion-card>
+  </div>
+
+&lt;!&ndash;  CARD CONTEMPLAÇÃO DA VIDA SILVESTRE&ndash;&gt;
+  <div class="atracoes animated bounceInDown ">
+    <ion-card class="atracoes" >
+      <div class="divClick" (click)="mostraContDaVidaF()"><h1>Contemplação da vida silvestre</h1></div>
+      <div *ngIf="mostraContDaVida" style="width: 100%">
+        <ion-slides pager="false" style="width: 100%; padding-bottom: 5px">
+          <ion-slide>
+            <ion-card class="cadaAtracao">
+              <img src="https://firebasestorage.googleapis.com/v0/b/parquenacional-63888.appspot.com/o/Est%C3%A1ticas%2Fcontempla%C3%A7%C3%A3o.jpg?alt=media&token=710bac89-a5f2-4161-b9fb-4dd1267c1373">
+              <ion-card-subtitle padding-top="5px">
+&lt;!&ndash;                Aqui vai o titulo!!&ndash;&gt;
+              </ion-card-subtitle>
+              <div class="infoatracoes">
+                <p>
+                  Caminhando pelas trilhas ou pela área das piscinas é possível observar vários animais e plantas do Cerrado.
+                  A utilização de um binóculo e a chegada cedo ao parque possibilita a visualização de várias espécies de animais silvestres, que surpreendem os visitantes.
+                  É importante que o visitante observe os animais e plantas apenas nas áreas autorizadas e abertas para esta finalidade.
+                  Recomendações: respeite as placas de sinalização e as orientações dos funcionários. Não alimente os animais. Mantenha distância segura e evite contato físico com qualquer espécie de animal silvestre.
+                </p>
+              </div>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+
+      </div>
+    </ion-card>
+  </div>-->
+
+<!--  CARD ATRATIVOS ALTERNATIVOS-->
+  <div class="atracoes animated bounceInDown " *ngFor="let alternativo of (alternativos | async)">
+    <ion-card class="atracoes" >
+      <div class="divClick" (click)="mostraAlternativo(alternativo.id)"><h1> {{ alternativo.nome }} </h1></div>
+      <div *ngIf="mostra === alternativo.id" style="width: 100%">
+        <ion-slides pager="false" style="width: 100%; padding-bottom: 5px">
+          <ion-slide>
+            <ion-card class="cadaAtracao">
+              <img src="{{alternativo.img}}">
+              <ion-card-subtitle padding-top="5px">
+                {{ alternativo.titulo }}
+              </ion-card-subtitle>
+
+              <div class="infoatracoes ion-padding">
+                <p>
+                  {{ alternativo.conteudo }}
+                </p>
+              </div>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+
+      </div>
+    </ion-card>
+  </div>
+
+</ion-content>

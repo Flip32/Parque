@@ -1,0 +1,61 @@
+ion-card.atracoes{
+  background: rgba(0, 0, 0, .1);
+  color: #cccc33;
+  font-weight: bold;
+  font-variant: small-caps;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: #cccc33 solid 1px;
+  box-shadow: 2px 2px #2f2f2f;
+  margin-bottom: 0;
+  padding-top: 5px;
+}
+
+ion-card-title{
+  font-size: x-large;
+  color: #cccc33;
+}
+
+ion-card-subtitle{
+  color: #669933;
+}
+
+ion-card-subtitle p{
+  font-size: medium;
+}
+
+h6{
+  font-size: large;
+}
+
+div.versao{
+  text-align: center;
+}
+div.participantes{
+  //text-align: center;
+  justify-content: center;
+  color: #fff;
+}
+h5{
+  font-weight: bold;
+  font-size: x-large;
+}
+
+div.footer{
+  margin-top: 40px;
+  padding: 10px;
+}
+
+div.link{
+  width: 80vw;
+  margin-top: 20px;
+  border-top: 1px solid #cccc33;
+  padding-top: 6px;
+  text-align: center;
+}
+
+ion-card-content p{
+  font-size: large;
+}

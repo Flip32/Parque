@@ -1,0 +1,38 @@
+<ion-header >
+  <ion-toolbar style="--background: black; color: #339966 " >
+    <div id="toolbar">
+      <ion-title class="titleToolbar" style="font-weight: bold">Parque Nacional de Brasília</ion-title>
+      <ion-img *ngIf="auth.afAuth.auth.currentUser.photoURL"  [src]="auth.afAuth.auth.currentUser.photoURL"></ion-img>
+      <ion-button color="dark" id="buttonNotificacao" *ngIf="exibirParaAdim()" (click)="abrirValidacao()">
+        <ion-badge *ngIf="contadorNoficacao !== 0" slot="start" color="danger">{{contadorNoficacao}}</ion-badge>
+        <ion-icon slot="icon-only"  name="alert" style="color: #ffce00"></ion-icon>
+      </ion-button>
+      <ion-icon routerLink="/" name="log-out" style="color: #f04141"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="--background: rgb(51, 51, 51)">
+  <ion-grid>
+      <ion-row no-margin *ngFor="let card of cards">
+        <ion-card id="cards" [routerLink]="card.url"  no-margin class="animated bounceInDown">
+          <div>
+            <ion-img [src]="card.img"></ion-img>
+            <ion-card-title>{{card.titulo}}</ion-card-title>
+          </div>
+        </ion-card>
+      </ion-row>
+
+  </ion-grid>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar style="--background: black; color: #339966 ">
+    <div class="footerToolbar">
+      <p routerLink="/sobre" style="color: #cccc33"> Sobre </p>
+      <ion-icon name="information-circle-outline" size="16px" routerLink="/sobre"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-footer>

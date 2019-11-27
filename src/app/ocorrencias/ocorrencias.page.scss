@@ -1,0 +1,215 @@
+
+/* CAIXA PARA ADICIONAR NOVAS OCORRÊNCIAS */
+ion-card#iconeAdd{
+  padding-left: 2px;
+  padding-right: 2px;
+  background: rgba(255, 0, 0, .05);
+  color: #cccc33;
+  font-weight: bold;
+  font-variant: small-caps;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: #cccc33 solid 1px;
+  margin: 10px 25px 0 25px;
+}
+
+div#addOc{
+  font-variant: small-caps;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  text-shadow: 1px -1px 3px #000000;
+
+}
+ion-icon.iconAdd{
+  color: #d30c03;
+  font-size: x-large;
+  font-weight: bold;
+  margin-right: 5px;
+}
+div p {
+  color: #d30c03;
+  font-size: 11pt;
+  font-weight: bold;
+}
+/* ==================== */
+
+/* CARD INPUT DE NOVAS OCORRÊNCIAS*/
+
+div#cardAddOc{
+  margin-bottom: 200px;
+}
+ion-card#addOcorrencia{
+  background-color: #303030;
+  color: white;
+  padding-bottom: 0px;
+}
+
+ion-label#labelSelect{
+  width: 100px;
+  padding-right: 2px;
+}
+
+ion-select#selectOc{
+  padding-left: 0;
+}
+
+ion-icon#cameraOcorrencia {
+  color: #c0c0c0;
+  padding-left: 45%;
+  padding-top: 5px;
+  font-size: 30pt;
+}
+
+
+ion-icon#enviarLoc{
+  color: rgba(0, 0, 255, .65);
+}
+
+ion-list#listaAdiciona {
+  margin-bottom: 0px;
+  padding-bottom: 0;
+
+}
+
+div#botaoEnviar ion-button{
+  color: #063;
+
+}
+
+/*  ====================  */
+
+/*CARDS DAS OCORRENCIAS*/
+
+div.ocorrencias, div#addOc, div#cardAddOc{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+div#botaoEnviar{
+  width: content-box;
+}
+
+ion-slide{
+  padding-bottom: 13px;
+}
+
+ion-button{
+  margin-top: 5px;
+  margin-left: 25%;
+  margin-bottom: 10px;
+  justify-self: center;
+}
+
+div.divClick{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-card.ocorrencias{
+  background: rgba(0, 0, 0, .1);
+  color: #cccc33;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: #cccc33 solid 1px;
+  box-shadow: 2px 2px #2f2f2f;
+}
+ion-card h1 {
+  font-weight: bolder;
+  font-variant: small-caps;
+  font-size: medium;
+  margin-top: 10px;
+}
+div#SubTitle{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+ion-card-title{
+  font-weight: bold;
+  margin-top: 10px;
+  color: #669933;
+}
+
+ion-card-subtitle{
+  font-weight: normal;
+  font-size: medium;
+  text-decoration: underline;
+  color: #339966;
+}
+h5{
+  padding: 0;
+  font-size: x-large;
+  font-weight: bold;
+}
+h6 {
+  font-weight: bold;
+  padding: 0;
+  margin: 1px;
+}
+span {
+  font-weight: bold;
+}
+ion-card-content {
+  font-size: small;
+  color: #339966;
+}
+ion-card img.imagemOc {
+  padding: 4px;
+  min-height: 200px;
+  max-height: 200px;
+}
+
+ion-card.cadaOcorrencia{
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+#lostAnimals{
+  animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -webkit-animation-delay: 0s;
+}
+#animaisSelv{
+  animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+}
+#novasEspecies{
+  animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  -webkit-animation-delay: 0.4s;
+}
+#crimes{
+  animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  -webkit-animation-delay: 0.6s;
+}
+#estrutura{
+  animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  -webkit-animation-delay: 0.8s;
+}
+#iconeAdd{
+  animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+}
+

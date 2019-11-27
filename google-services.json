@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "854466265316",
+    "firebase_url": "https://parquenacional-63888.firebaseio.com",
+    "project_id": "parquenacional-63888",
+    "storage_bucket": "parquenacional-63888.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854466265316:android:6864345ddbf4e912",
+        "android_client_info": {
+          "package_name": "com.app.parquenacionalbrasilia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "854466265316-lv2ru907v0vfl4n8ifn3ho2oj20rnnd8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.parquenacionalbrasilia",
+            "certificate_hash": "c520be53c596f0150c474d7f462e87929537a914"
+          }
+        },
+        {
+          "client_id": "854466265316-p4k5o5j1d9uij21qcsa1j0ogtlh23obo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqbeIaOaOtYHd72Ng306gRIFqmwyHeIlc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "854466265316-p4k5o5j1d9uij21qcsa1j0ogtlh23obo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "854466265316-j31k04l6ll5tos6a9skeme8e6porg9qv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.app.parquenacionalbrasilia"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,41 @@
+ion-card{
+  height: content-box;
+  background: rgba(0, 0, 0, .1);
+  color: #063;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: #cccc33 solid 1px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+ion-button{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #669933;
+}
+
+ion-button#ocorrencia{
+  justify-self: center;
+  margin-left: 33%;
+}
+
+ion-card#addOcorrencia{
+  background-color: #303030;
+  color: white;
+  padding-bottom: 0px;
+}
+
+ion-icon#enviarLoc2 {
+  color: rgba(0, 0, 255, .65);
+}
+
+ion-icon#cameraOcorrencia2 {
+  color: #c0c0c0;
+  font-size: 30pt;
+}

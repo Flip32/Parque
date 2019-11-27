@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar style="--background: black; color: #396">
+    <ion-title>Emergência</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen style="--background: rgb(51, 51, 51);">
+
+  <ion-card style="color: #063">
+
+    <div class="botoesEmergencia">
+      <ion-buttons *ngFor="let contact of contacts">
+        <ion-button  fill="outline" expand="full" (click)="call(contact.phone)">{{ contact.name }}</ion-button>
+        <ion-icon name="call"></ion-icon>
+      </ion-buttons>
+    </div>
+
+   <!-- <div class="botoesEmergencia">
+      <ion-buttons>
+        <ion-button  fill="outline" expand="full">Administração PNB - 61.32334553</ion-button>
+        <ion-icon name="call"></ion-icon>
+      </ion-buttons>
+    </div>-->
+
+
+
+
+  </ion-card>
+
+</ion-content>

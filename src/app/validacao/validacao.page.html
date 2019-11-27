@@ -1,0 +1,145 @@
+<ion-header>
+  <ion-toolbar style="--background: black; color: #396">
+    <ion-title>Administração</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/home">
+        <ion-icon name="home" size="large" style="color:#669933;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen style="--background: rgb(51, 51, 51);">
+
+
+<!--  VALIDAÇÃO -->
+  <div class="validacao" >
+    <ion-card class="atracoes" >
+      <div class="divClick" (click)="abrirValidacao()"> <h1>Validar</h1> </div>
+      <div *ngIf="validacao" style="width: 100%">
+        <ion-slides pager="true" style="width: 100%; padding-bottom: 5px">
+
+          <ion-slide style="width: 100%" *ngFor="let ocorrenciaVal of (ocorrenciasAdd | async)">
+            <ion-card class="cadaAtracao">
+              <h1>{{ ocorrenciaVal.tipo }}</h1>
+              <div>
+                <img [src]="ocorrenciaVal.url" >
+                <ion-card-title> {{ ocorrenciaVal.nomeOcorrencia }} </ion-card-title>
+                <ion-card-subtitle padding-top="5px">
+                  <span>Local: </span> {{ ocorrenciaVal.local }}
+                </ion-card-subtitle>
+                <ion-card-content>
+                  <p>Enviado Por:
+                    <ion-chip>
+                      <ion-avatar>
+                        <img src="{{ocorrenciaVal.user.photoURL}}">
+                      </ion-avatar>
+                      <ion-label>{{ ocorrenciaVal.user.displayName }}</ion-label>
+                    </ion-chip>
+                  </p>
+                  <h6>Data: {{ ocorrenciaVal.data | date: 'dd/MM/yy' }}</h6>
+                </ion-card-content>
+              </div>
+              <div class="botaoValidar">
+                <ion-button shape="round" fill="solid" (click)="validarOcorrencia(ocorrenciaVal.id)">Validar</ion-button>
+                <ion-button shape="round" fill="outline" (click)="deletarVal(ocorrenciaVal.id, ocorrenciaVal.nomeOcorrencia)">Apagar</ion-button>
+              </div>
+            </ion-card>
+          </ion-slide>
+
+        </ion-slides>
+      </div>
+    </ion-card>
+  </div>
+
+<!--  EVENTOS -->
+  <div class="validacao"  >
+    <ion-card class="atracoes" >
+      <div class="divClick" (click)="abrirFormularioEventos()">  <h1>Enviar Eventos</h1> </div>
+
+      <ion-list class="listaAdiciona" *ngIf="verFormEventos">
+        <ion-item>
+          <ion-input placeholder="Título" [(ngModel)]="evento.titulo" clearInput="true" required>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input placeholder="Descrição" [(ngModel)]="evento.descricao" clearInput="true" required>
+          </ion-input >
+        </ion-item>
+        <ion-item>
+          <ion-datetime placeholder="Data Início" [(ngModel)]="evento.dataI"  required>
+          </ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-datetime placeholder="Data Fim" [(ngModel)]="evento.dataF" required>
+          </ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label>Inserir Imagem</ion-label>
+          <ion-button (click)="imagemEventoAdd()">
+            <ion-icon name="cloud-upload" size="medium"></ion-icon>
+          </ion-button>
+        </ion-item>
+        <div class="botaoValidar">
+          <ion-button shape="round" fill="outline" [disabled]="!formularioPreenchidoEventos"  (click)="adicionarEvento()">Enviar</ion-button>
+        </div>
+      </ion-list>
+    </ion-card>
+  </div>
+
+<!--  AVISOS -->
+  <div class="validacao"  >
+    <ion-card class="atracoes" >
+      <div class="divClick" (click)="abrirFormularioAvisos()">  <h1>Enviar Avisos</h1> </div>
+
+      <ion-list class="listaAdiciona" *ngIf="verFormAvisos">
+        <ion-item>
+          <ion-input placeholder="Título" [(ngModel)]="aviso.titulo" clearInput="true" required>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input placeholder="Conteúdo" [(ngModel)]="aviso.conteudo" clearInput="true" required>
+          </ion-input >
+        </ion-item>
+        <div class="botaoValidar">
+          <ion-button shape="round" fill="outline" (click)="adicionarAviso()">Enviar</ion-button>
+        </div>
+      </ion-list>
+    </ion-card>
+  </div>
+
+<!--  ACESSO ADMIM-->
+  <div class="validacao">
+    <ion-card style="border: #cccc33 solid 1px;">
+      <div class="divClick" (click)="abrirAdministradores()"> <h1>Acesso Admim</h1> </div>
+
+      <div *ngIf="verAdmim">
+          <ion-card-header class="ion-padding-bottom"><b>Conceder acesso de administrador</b></ion-card-header>
+          <ion-card-content>
+            <ion-list *ngFor="let usuario of usuarios">
+              <ion-item>
+                <h6>{{ usuario.email }}</h6>
+                <ion-toggle slot="end" [(ngModel)]="usuario.admim"></ion-toggle>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+
+        <div class="botoes">
+          <ion-button (click)="salvarAdmim()">Salvar</ion-button>
+        </div>
+
+      </div>
+    </ion-card>
+  </div>
+
+
+
+</ion-content>
+
+
+
+
+

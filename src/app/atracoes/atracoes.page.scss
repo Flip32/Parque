@@ -1,0 +1,96 @@
+
+div.atracoes{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+div.divClick{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-slide {
+  padding-bottom: 15px;
+
+}
+
+ion-button{
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #063;
+}
+
+ion-card.atracoes{
+  background: rgba(0, 0, 0, .1);
+  color: #cccc33;
+  font-weight: bold;
+  //font-variant: small-caps;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: #cccc33 solid 1px;
+  box-shadow: 2px 2px #2f2f2f;
+}
+
+ion-card h1 {
+  font-weight: bolder;
+  //font-variant: small-caps;
+  font-size: medium;
+  margin-top: 10px;
+}
+div#SubTitle{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+ion-card-subtitle{
+  padding: 0.6em 0 0 0;
+  font-size: medium;
+  font-weight: bold;
+  color: #669933;
+}
+
+h5 {
+  padding: 0;
+  margin: 1px;
+}
+
+h6 {
+  color: #006633;
+  font-size: x-small;
+  padding: 0;
+  margin: 1px;
+}
+span {
+  font-weight: bold;
+}
+ion-card-content {
+  font-size: small;
+  color: #396;
+}
+p {
+  font-size: small;
+  color: #396;
+}
+img {
+  padding: 4px;
+
+}
+
+ion-card.cadaAtracao{
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.piscinaSlides{
+  margin-top: 0px;
+}

@@ -1,0 +1,271 @@
+<ion-header>
+  <ion-toolbar style="--background: black; color: #339966">
+    <ion-title>Ocorrências</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen style="--background: rgb(51, 51, 51)">
+
+
+<!--  CARD ANIMAIS PERDIDOS-->
+  <div id="lostAnimals" class="ocorrencias animated rollIn" >
+    <ion-card class="ocorrencias" >
+      <div class="divClick" (click)="verLost()">
+        <h1 >Animais Domésticos</h1>
+      </div>
+      <div *ngIf="mostraCardLost" style="width: 100%">
+        <ion-slides pager="true" style="width: 100%; padding-bottom: 10px" >
+          <ion-slide style="width: 100%" *ngFor="let ocorrencia of (ocorrenciaAnimalPerdido | async)">
+            <ion-card class="cadaOcorrencia">
+              <img class="imagemOc" [src]="ocorrencia.url">
+              <ion-card-title> {{ ocorrencia.nomeOcorrencia }}
+              </ion-card-title>
+              <ion-card-subtitle padding-top="5px">
+                <span>Local: </span> {{ ocorrencia.local }}
+              </ion-card-subtitle>
+              <ion-card-content>
+                <p>Enviado Por:
+                  <ion-chip>
+                    <ion-avatar>
+                      <img src="{{ocorrencia.user.photoURL}}">
+                    </ion-avatar>
+                    <ion-label>{{ ocorrencia.user.displayName }}</ion-label>
+                  </ion-chip>
+                </p>
+                <h6>Data: {{ ocorrencia.data | date: 'dd/MM/yy'}}</h6>
+              </ion-card-content>
+              <div>
+                <ion-buttons *ngIf="exibirParaAdim()">
+                  <ion-button (click)="deleteOC(ocorrencia.id, ocorrencia.nomeOcorrencia)" color="danger">
+                    <ion-icon name="trash"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+              </div>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </div>
+
+    </ion-card>
+  </div>
+
+ <!-- CARD FAUNA SILVESTRE-->
+  <div id="animaisSelv" class="ocorrencias animated rollIn" >
+    <ion-card class="ocorrencias" >
+      <div class="divClick"  (click)="verSelvagem()"><h1 >Animais Silvestres</h1></div>
+      <div *ngIf="mostraCardSelvagem" style="width: 100%">
+        <ion-slides pager="true" style="width: 100%; padding-bottom: 10px">
+          <ion-slide style="width: 100%" *ngFor="let ocorrencia of (ocorrenciaFauna | async)">
+            <ion-card class="cadaOcorrencia">
+              <img class="imagemOc" [src]="ocorrencia.url">
+              <ion-card-title> {{ ocorrencia.nomeOcorrencia }} </ion-card-title>
+              <ion-card-subtitle padding-top="5px">
+                <span>Local: </span>{{ ocorrencia.local }}
+              </ion-card-subtitle>
+              <ion-card-content>
+                <p>Enviado Por:
+                  <ion-chip>
+                    <ion-avatar>
+                      <img src="{{ocorrencia.user.photoURL}}">
+                    </ion-avatar>
+                    <ion-label>{{ ocorrencia.user.displayName }}</ion-label>
+                  </ion-chip>
+                </p>
+                <h6>Data: {{ ocorrencia.data | date: 'dd/MM/yy'}}</h6>
+              </ion-card-content>
+              <div>
+                <ion-buttons *ngIf="exibirParaAdim()" class="ion-text-center">
+                  <ion-button (click)="deleteOC(ocorrencia.id, ocorrencia.nomeOcorrencia)" color="danger">
+                    <ion-icon name="trash"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+              </div>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </div>
+    </ion-card>
+  </div>
+
+<!--  CARD FLORA SILVESTRE-->
+  <div id="novasEspecies" class="ocorrencias animated rollIn" >
+    <ion-card class="ocorrencias" >
+      <div class="divClick"  (click)="verEspecies()"><h1 > Flora </h1></div>
+      <div *ngIf="mostraCardEspecies" style="width: 100%">
+        <ion-slides pager="true" style="width: 100%; padding-bottom: 10px">
+          <ion-slide style="width: 100%" *ngFor="let ocorrencia of (ocorrenciaFlora | async)">
+            <ion-card class="cadaOcorrencia">
+              <img class="imagemOc" [src]="ocorrencia.url">
+              <ion-card-title> {{ ocorrencia.nomeOcorrencia }} </ion-card-title>
+              <ion-card-subtitle padding-top="5px">
+                <span>Local: </span> {{ ocorrencia.local }}
+              </ion-card-subtitle>
+              <ion-card-content>
+                <p>Enviado Por:
+                  <ion-chip>
+                    <ion-avatar>
+                      <img src="{{ocorrencia.user.photoURL}}">
+                    </ion-avatar>
+                    <ion-label>{{ ocorrencia.user.displayName }}</ion-label>
+                  </ion-chip>
+                </p>
+                <h6>Data: {{ ocorrencia.data | date: 'dd/MM/yy'}}</h6>
+              </ion-card-content>
+              <div>
+                <ion-buttons *ngIf="exibirParaAdim()">
+                  <ion-button (click)="deleteOC(ocorrencia.id, ocorrencia.nomeOcorrencia)" color="danger">
+                    <ion-icon name="trash"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+              </div>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </div>
+
+    </ion-card>
+  </div>
+
+<!--  CARD CRIMES AMBIENTAIS-->
+  <div id="crimes" class="ocorrencias animated rollIn" >
+    <ion-card class="ocorrencias" >
+      <div class="divClick"  (click)="verCrimes()"><h1> Crimes Ambientais </h1></div>
+      <div *ngIf="mostraCardCrimes" style="width: 100%">
+        <ion-slides pager="true" style="width: 100%; padding-bottom: 10px">
+          <ion-slide style="width: 100%" *ngFor="let ocorrencia of (ocorrenciaCrimes | async)">
+            <ion-card class="cadaOcorrencia">
+              <img class="imagemOc" [src]="ocorrencia.url">
+              <ion-card-title> {{ ocorrencia.nomeOcorrencia }} </ion-card-title>
+              <ion-card-subtitle padding-top="5px">
+                <span>Local: </span> {{ ocorrencia.local }}
+              </ion-card-subtitle>
+              <ion-card-content>
+                <p>Enviado Por:
+                  <ion-chip>
+                    <ion-avatar>
+                      <img src="{{ocorrencia.user.photoURL}}">
+                    </ion-avatar>
+                    <ion-label>{{ ocorrencia.user.displayName }}</ion-label>
+                  </ion-chip>
+                </p>
+                <h6>Data: {{ ocorrencia.data | date: 'dd/MM/yy'}} </h6>
+              </ion-card-content>
+              <div>
+                <ion-buttons *ngIf="exibirParaAdim()">
+                  <ion-button (click)="deleteOC(ocorrencia.id, ocorrencia.nomeOcorrencia)" color="danger">
+                    <ion-icon name="trash"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+              </div>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </div>
+
+    </ion-card>
+  </div>
+
+ <!--CARD ESTRUTURA PARQUE-->
+  <div id="estrutura" class="ocorrencias animated rollIn" >
+    <ion-card class="ocorrencias" >
+      <div class="divClick"  (click)="verEstrutura()"><h1 > Estrutura do Parque </h1></div>
+      <div *ngIf="mostraCardEstrutura" style="width: 100%">
+        <ion-slides pager="true" style="width: 100%; padding-bottom: 10px">
+          <ion-slide style="width: 100%" *ngFor="let ocorrencia of (ocorrenciaEstrutura | async)">
+            <ion-card class="cadaOcorrencia">
+              <img class="imagemOc" [src]="ocorrencia.url">
+              <ion-card-title> {{ ocorrencia.nomeOcorrencia }} </ion-card-title>
+              <ion-card-subtitle padding-top="5px">
+                <span>Local: </span> {{ ocorrencia.local }}
+              </ion-card-subtitle>
+              <ion-card-content>
+                <p>Enviado Por:
+                  <ion-chip>
+                    <ion-avatar>
+                      <img src="{{ocorrencia.user.photoURL}}">
+                    </ion-avatar>
+                    <ion-label>{{ ocorrencia.user.displayName }}</ion-label>
+                  </ion-chip>
+                </p>
+                <h6>Data: {{ ocorrencia.data | date: 'dd/MM/yy'}} </h6>
+              </ion-card-content>
+              <div>
+                <ion-buttons *ngIf="exibirParaAdim()">
+                  <ion-button (click)="deleteOC(ocorrencia.id, ocorrencia.nomeOcorrencia)" color="danger">
+                    <ion-icon name="trash"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+              </div>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </div>
+
+    </ion-card>
+  </div>
+
+ 
+
+
+
+  <!--=====================================-->
+  <!--Card para adicionar novas ocorrências-->
+
+  <ion-card id="iconeAdd" class="animated rollIn"  (click)="addOcorrencias()">
+    <div id="addOc">
+      <ion-icon class="iconAdd" name="add-circle-outline"  justify-content-end></ion-icon>
+      <p>Adicionar Ocorrência</p>
+    </div>
+  </ion-card>
+
+  <div id="cardAddOc" style="margin-top: 0" *ngIf="addOcorrencia">
+    <ion-card id="addOcorrencia">
+
+      <ion-icon id="cameraOcorrencia" name="md-camera" justify-content-end (click)="abrirCamera()"></ion-icon>
+
+
+      <ion-list id="listaAdiciona">
+
+        <ion-list>
+          <ion-item>
+            <ion-label id="labelSelect">Tipo</ion-label>
+            <ion-select placeholder="Selecione" [(ngModel)]="ocorrencia.tipo" required>
+              <ion-select-option value="Animal Perdido">
+                Animais Domésticos
+              </ion-select-option>
+              <ion-select-option value="Fauna Silvestre">
+                Animais Silvestre
+              </ion-select-option>
+              <ion-select-option value="Flora Silvestre">
+                Flora
+              </ion-select-option>
+              <ion-select-option value="Crimes Ambientais">
+                Crimes Ambientais
+              </ion-select-option>
+              <ion-select-option value="Estrutura do Parque">
+                Estrutura do Parque
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+
+        <ion-item>
+          <ion-input placeholder="Nome da Ocorrência" [(ngModel)]="ocorrencia.nomeOcorrencia" clearInput required>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input placeholder="Local" [(ngModel)]="ocorrencia.local" clearInput required>
+          </ion-input>
+<!--          <ion-icon id="enviarLoc" name="md-locate" justify-content-end ></ion-icon>-->
+        </ion-item>
+        <div id="botaoEnviar">
+          <ion-button [disabled]="!formularioPreenchido" shape="round" fill="outline" (click)="adicionarOcorrencia()">Enviar</ion-button>
+        </div>
+      </ion-list>
+    </ion-card>
+  </div>
+</ion-content>
+

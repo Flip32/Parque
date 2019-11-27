@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar style="--background: black; color: #339966">
+    <ion-title>Trilhas</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen style="--background: rgb(51, 51, 51); no-repeat center center;">
+
+  <div class="trilhas animated bounceInDown " *ngFor="let trilha of (trilhas | async) ">
+    <ion-card class="cardTrilha" >
+      <div class="divClick" (click)="mostrarCard(trilha.id)"> <h1 >{{trilha.nome}}</h1> </div>
+      <div *ngIf="mostrar === trilha.id ">
+        <img src="{{trilha.img}}">
+        <ion-card-subtitle padding-top="5px">
+          <h6>
+            <span>Extensão: {{trilha.extensao}}</span>
+            <!--            <ion-icon src="../../assets/icones/caminhada.svg" style="color: #cccc33"></ion-icon>-->
+          </h6>
+          <h6><span>Duração:</span> {{trilha.duracao}}</h6>
+          <h6><span>Aberto:</span> {{trilha.funcionamento}}</h6>
+        </ion-card-subtitle>
+        <!--<ion-buttons justify-content-center margin-bottom="10px">
+          <ion-button shape="round" fill="outline">GO</ion-button>
+        </ion-buttons>-->
+        <ion-card-content>
+          {{trilha.conteudo}}
+        </ion-card-content>
+      </div>
+    </ion-card>
+  </div>
+
+</ion-content>
